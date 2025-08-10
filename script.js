@@ -204,6 +204,30 @@ function updateAQIColor(aqi) {
     aqiEl.style.textShadow = `0 0 8px ${color}`;
 }
 
+// Update UV Index display color based on value
+function displayUVIndex(uvIndex) {
+            const uvDisplay = document.getElementById('uvDisplay');
+            let levelClass = '';
+            let levelDescription = '';
+
+            if (uvIndex >= 0 && uvIndex <= 2) {
+                color = '#ffeb3b'; // Satisfactory (Yellow)
+            } else if (uvIndex <= 5) {
+                 color = '#ff9800'; // Moderate (Orange)
+            } else if (uvIndex <= 7) {
+                color = '#f44336'; // Poor (Red)
+            } else if (uvIndex <= 10) {
+                color = '#9c27b0'; // Very Poor (Purple)
+            } else {
+                color = '#795548'; // Severe (Brown)
+            }
+
+            uvDisplay.textContent = `UV Index: ${uvIndex} (${levelDescription})`;
+            uvDisplay.className = levelClass;
+        }
+
+
+
 // Update thermometer visualization
 function updateThermometer(temp) {
     // Scale temperature to thermometer height (0-50°C range)
