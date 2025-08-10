@@ -152,7 +152,7 @@ function updateWeatherDisplay(data) {
     pm10El.textContent = `${data.pm10.toFixed(1)} µg/m³`;
    
     // Wind data
-    const windSpeedKmh = (data.windSpeed * 3.6).toFixed(1); // Convert m/s to km/h
+    const windSpeedKmh = (data.windSpeed * 1).toFixed(1); // Convert m/s to km/h
     windSpeedEl.textContent = `${windSpeedKmh} km/h`;
     compassWindSpeedEl.textContent = windSpeedKmh;
    
